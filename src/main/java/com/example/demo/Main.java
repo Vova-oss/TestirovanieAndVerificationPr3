@@ -18,7 +18,9 @@ public class Main {
     }
 
     public static void cleanAllDecks(){
-
+        cards.clear();
+        firstPlayer.clear();
+        secondPlayer.clear();
     }
 
     public static void createTableOfPower(){
