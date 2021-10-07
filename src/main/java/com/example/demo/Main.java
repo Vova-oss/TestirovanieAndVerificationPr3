@@ -24,7 +24,10 @@ public class Main {
     }
 
     public static void createTableOfPower(){
-
+        List<Value> values = Arrays.asList(Value.values());
+        for(Value value: values){
+            tableOfPower.put(value.value, values.indexOf(value));
+        }
     }
 
     public static void createTrump(){
