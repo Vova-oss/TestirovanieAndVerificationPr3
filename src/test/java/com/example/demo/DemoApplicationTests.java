@@ -25,4 +25,14 @@ class DemoApplicationTests {
         assert Main.secondPlayer.size() == 6;
     }
 
+    @Test
+    void testCleanAllDecks() {
+        Main.createDeck();
+        Main.createArms();
+        Main.cleanAllDecks();
+        assert Main.cards.isEmpty();
+        assert Main.firstPlayer.isEmpty();
+        assert Main.secondPlayer.isEmpty();
+    }
+
 }
