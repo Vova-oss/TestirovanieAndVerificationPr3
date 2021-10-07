@@ -3,8 +3,11 @@ package com.example.demo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -77,6 +80,28 @@ class DemoApplicationTests {
         enemy = new Card(Value.SEVEN, Suit.CH);
         my = new Card(Value.JACK, Suit.P);
         assert !Main.checkFight(enemy, my);
+    }
+
+    @Test
+    void testPlayerDefend() {
+        Main.trump = Suit.P;
+        Main.createTableOfPower();
+        InputStream inputStream = System.in;
+        List<Card> list = new LinkedList<>();
+        list.add(new Card(Value.ACE, Suit.P));
+        list.add(new Card(Value.SEVEN, Suit.CH));
+
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n0".getBytes());
+        System.setIn(in);
+        Main.playerDefend(new Card(Value.QUEEN, Suit.P), list, "второй");
+        assert list.size() == 3;
+
+        in = new ByteArrayInputStream("1\n1".getBytes());
+        System.setIn(in);
+        assert Main.playerDefend(new Card(Value.QUEEN, Suit.P), list, "второй");
+
+        System.setIn(inputStream);
+
     }
 
 }
