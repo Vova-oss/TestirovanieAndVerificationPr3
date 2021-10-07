@@ -43,4 +43,11 @@ class DemoApplicationTests {
         assert Main.tableOfPower.size() ==9;
     }
 
+    @Test
+    void testCreateTrump() {
+        Main.trump = null;
+        Main.createTrump();
+        assert Main.trump != null;
+    }
+
 }
