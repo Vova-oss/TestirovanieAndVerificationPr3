@@ -31,7 +31,8 @@ public class Main {
     }
 
     public static void createTrump(){
-
+        trump = Suit.values()[(int) (Math.random()*Suit.values().length)];
+        System.out.println("Козырь - " + trump.suit);
     }
 
     public static void createDeck(){
