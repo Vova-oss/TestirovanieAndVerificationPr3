@@ -104,4 +104,20 @@ class DemoApplicationTests {
 
     }
 
+    @Test
+    void testTakeSomeCard() {
+
+        Main.createDeck();
+
+        List<Card> current = new LinkedList<>();
+        current.add(new Card(Value.SEVEN, Suit.CH));
+        List<Card> next = new LinkedList<>();
+        next.add(new Card(Value.EIGHT, Suit.CH));
+
+        Main.takeSomeCard(current, next);
+        assert current.size() == 6;
+        assert next.size() == 6;
+
+    }
+
 }
