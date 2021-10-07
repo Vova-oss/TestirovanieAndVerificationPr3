@@ -41,7 +41,14 @@ public class Main {
     }
 
     public static void createArms(){
-
+        while (firstPlayer.size()<6){
+            Card card = cards.get((int) (Math.random()*cards.size()));
+            firstPlayer.add(card);
+            cards.remove(card);
+            card = cards.get((int) (Math.random()*cards.size()));
+            secondPlayer.add(card);
+            cards.remove(card);
+        }
     }
 
 
