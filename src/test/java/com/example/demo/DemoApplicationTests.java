@@ -3,6 +3,7 @@ package com.example.demo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 @SpringBootTest
@@ -33,6 +34,13 @@ class DemoApplicationTests {
         assert Main.cards.isEmpty();
         assert Main.firstPlayer.isEmpty();
         assert Main.secondPlayer.isEmpty();
+    }
+
+    @Test
+    void testCreateTableOfPower() {
+        Main.tableOfPower = new HashMap<>();
+        Main.createTableOfPower();
+        assert Main.tableOfPower.size() ==9;
     }
 
 }
