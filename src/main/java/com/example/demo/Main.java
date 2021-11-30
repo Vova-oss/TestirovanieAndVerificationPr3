@@ -14,8 +14,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         while (true) {
-            Scanner in = new Scanner(System.in);
             System.out.println("[1] - Начать игру; [2] - Завершить");
             String start = in.nextLine();
             if (start.equals("1")) {
